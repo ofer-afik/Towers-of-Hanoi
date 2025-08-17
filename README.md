@@ -1,9 +1,9 @@
-# Towers-of-Hanoi
+[# Towers-of-Hanoi
 Towers of Hanoi is a classic puzzle, created by the Frenc mathematician Édouard Lucas.
 
   There is a legend that says that there is a temple in which there are priests tasked with solving this puzzle, of three poles and 64 golden disks. When the priests will complete it, the temple will collapse and the world will end.
-  But don't worry. To solve for how many moves minimum are required to complete the puzzle, we have the expression 2<sup><em>n<em><sup> - 1, where n is the number of disks.
-  According to this, that will take 2<sup>64<sup> - 1 moves, and if we estimate that each move takes 1 second, solving the puzzle will take **_585 billion years!_**
+  But don't worry. To solve for how many moves minimum are required to complete the puzzle, we have the expression **2<sup><em>n</em></sup> - 1**, where n is the number of disks.
+  According to this, that will take 2<sup>64</sup> - 1 moves, and if we estimate that each move takes 1 second, solving the puzzle will take **_585 billion years!_**
 
 ## Overview
 #### Game Contents
@@ -19,3 +19,4 @@ The rules are as following:
 
 ## So... What's this?
   This is a game written in HTML/CSS/JS. It's my first website!
+](https://www.vanishingincmagic.com/puzzles-and-brainteasers/articles/history-of-tower-of-hanoi-problem/)
