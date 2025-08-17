@@ -1,4 +1,4 @@
-[# Towers-of-Hanoi
+# Towers-of-Hanoi
 Towers of Hanoi is a classic puzzle, created by the Frenc mathematician Édouard Lucas.
 
   There is a legend that says that there is a temple in which there are priests tasked with solving this puzzle, of three poles and 64 golden disks. When the priests will complete it, the temple will collapse and the world will end.
@@ -19,4 +19,3 @@ The rules are as following:
 
 ## So... What's this?
   This is a game written in HTML/CSS/JS. It's my first website!
-](https://www.vanishingincmagic.com/puzzles-and-brainteasers/articles/history-of-tower-of-hanoi-problem/)
