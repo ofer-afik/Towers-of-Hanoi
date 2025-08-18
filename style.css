@@ -1,0 +1,36 @@
+body {
+    background-color: #D4FF91;
+    font-family: "DynaPuff","Times New Roman", "Sans-Serif";
+}
+
+nav {
+    font-size: 20px;
+}
+
+header {
+    background-color: #AAC530;
+    text-align: center;
+    padding: 10px;
+    color: #515E17;
+}
+
+#Overview {
+    margin-top: 15px;
+    color: #BB91FF;
+    text-align: center;
+    font-size: 30;
+    font-weight: 750;
+    font-style: italic;
+}
+
+.subDetails {
+    color: #798B28;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+details {
+    font-size: 20px;
+    color: #91D5FF;
+    font-weight: 500;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Ofer Afik">
+    <meta name="description" content="Towers of Hanoi is a fun puzzle/riddle.">
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Towers of Hanoi</title>
+</head>
+<body>
+    <header>
+        <h1>Towers of Hanoi</h1>
+        <nav>
+            <a href="https://en.m.wikipedia.org/wiki/Tower_of_Hanoi">WIKIPEDIA</a> |
+            <a href="https://www.vanishingincmagic.com/puzzles-and-brainteasers/articles/history-of-tower-of-hanoi-problem/">HISTORY/ORIGIN</a> |
+            <a href="https://github.com/ofer-afik/Towers-of-Hanoi">GITHUB REPOSITORY</a> 
+        </nav>
+    </header>
+    <section>
+        <details>
+            <summary id="Overview">Overview</summary>
+            <p>Basically, there are three pegs, and a number of disks with varying disk sizes. The disks all start on one peg, from big to small, and you need to move all the disks to another peg, usually from the left-most to the right-most. Of course, it's a bit more complicated. You can read the rules down below.</p>
+            <details>
+                <summary class="subDetails">Rules</summary>
+                <h4>These are the rules we will play with:</h4>
+                <ul type="square">
+                    <li>To win, you must move all the disks from the left peg to the right peg</li><br>
+                    <li>Each move consists of taking the topmost disk from a peg and placing it on another</li><br>
+                    <li>You cannot place a disk in such a way that there is a smaller disk below a bigger disk</li><br>
+                    <li>Your time and number of moves will be counted, you can view them.</li>
+                </ul>
+            </details>
+            <details>
+                <summary class="subDetails">Mathematical Expression</summary>
+                <p>To figure out the minimum number of moves required to complete the puzzle, we must calculate <b>2<i><sup>n</sup></i> - 1</b>. That means that a game with 3 disks will take a minimum of 7 moves, and a game with 8 will take a minimum of 255 moves.</p>
+            </details>
+            <details>
+                <summary class="subDetails">The Legend</summary>
+                <p>There is a legend that says there is a temple in which there are priests tasked with completing this puzzle, with 3 poles and <i>64 disks!</i> According to our expression, that will take <b>18,446,744,073,709,551,616</b> moves. Assuming that each move takes one second, it will take <big>584.5 billion years!</big></p>
+            </details>
+        </details>
+    </section>
+</body>
+</html>
