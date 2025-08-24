@@ -14,6 +14,10 @@ header {
     color: #515E17;
 }
 
+#info p {
+    text-indent: 30px;
+}
+
 #Overview {
     margin-top: 15px;
     color: #BB91FF;
@@ -33,4 +37,92 @@ details {
     font-size: 20px;
     color: #91D5FF;
     font-weight: 500;
+}
+
+.tower {
+    background-color: #4F8CF7;
+    height: 400px;    
+    width: 300px;
+    margin: 15px;
+    position: relative;
+}
+
+.towerButton {
+    position: absolute;
+    background-image: radial-gradient(#D4FF91 20%, #4F8CF7 80%);
+    border: none;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.towerButton:hover {
+    background-image: radial-gradient(#4F8CF7 20%, #D4FF91 80%)
+}
+
+.towerTop {
+    position: absolute;
+    top: 80px;
+    right: 135px;
+    width: 30px;
+    height: 240px;
+    background-color: #F7B94F;
+    z-index: 0;
+}
+
+.towerBottom {
+    position: absolute;
+    top: 320px;
+    right: 50px;
+    height: 30px;
+    width: 200px;
+    background-color: #F7B94F;
+    z-index: 0;
+}
+
+.disk {
+    z-index: 1;
+    height: 25px;
+    position: absolute;
+    margin: 0px
+}
+
+#disk0 {
+    width: 180px;
+    background-color: #D92823;
+}
+
+#disk1 {
+    width: 165px;
+    background-color: #D98D23;
+}
+
+#disk2 {
+    width: 150px;
+    background-color: #F0E116;
+}
+
+#disk3 {
+    width: 135px;
+    background-color: #64DE1F;
+}
+
+#disk4 {
+    width: 120px;
+    background-color: #1FDED1;
+}
+
+#disk5 {
+    width: 105px;
+    background-color: #000ED9;
+}
+
+#disk6 {
+    width: 90px;
+    background-color: #8D00FF;
+}
+
+#disk7 {
+    width: 75px;
+    background-color: #D90BCE;
 }
