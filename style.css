@@ -4,6 +4,7 @@ body {
 
 * {
     position: relative;
+    z-index: 0;
     font-family: "DynaPuff","Times New Roman", "Sans-Serif";
 }
 
@@ -167,7 +168,8 @@ details {
 }
 
 #screen {
-    z-index: 1;
+    visibility: hidden;
+    z-index: -1;
     top: 0px;
     left: 0px;
     position: fixed;

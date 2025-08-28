@@ -66,14 +66,16 @@ function move(from, to) {
 }
 
 function Win() {
-    document.getElementById("screen").style.display = "block";
+    document.getElementById("screen").style.zIndex = "1";
+    document.getElementById("screen").style.visibility = "visible";
     document.body.appendChild(winwindow.alert);
     document.getElementById("movesDisplayWin").innerHTML = `You completed the game in ${movesCount} moves!`;
     document.getElementById("closeWinwindow.alert").addEventListener("click", gameEnd);
 }
 
 function gameEnd() {
-    document.getElementById("screen").style.display = "none";
+    document.getElementById("screen").style.zIndex = "-1";
+    document.getElementById("screen").style.visibility = "hidden";
     document.getElementById("winwindow.alert").remove();
     moveHeader.style.visibility = "hidden";
     towerDisks.tower1 = [];
