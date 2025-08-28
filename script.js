@@ -1,6 +1,6 @@
 const winAlert = document.createElement("div");
-winAlert.id = "winAlert";
-winAlert.innerHTML = "<h2>🎉Congrats! You Win!🎉</h2><h3 id='movesDisplayWin'></h3><button id='closeWinAlert'><img src='close.png' alt='Close'></button>";
+winwindow.alert.id = "winwindow.alert";
+winwindow.alert.innerHTML = "<h2>🎉Congrats! You Win!🎉</h2><h3 id='movesDisplayWin'></h3><button id='closeWinwindow.alert'><img src='close.png' alt='Close'></button>";
 
 const tower1 = document.getElementById("tower1");
 const tower2 = document.getElementById("tower2");
@@ -22,7 +22,6 @@ const diskDistance = [80, 105,  130, 155, 180, 205, 230, 255];
 disks.forEach((disk, index) => {
     disk.id = `disk${index}`;
     disk.className = "disk";
-    disk.style.bottom = `${diskDistance[index]}px`;
 })
 
 let movesCount
@@ -30,6 +29,9 @@ let moveFromTo
 const moveHeader = document.getElementById("moves");
 
 function game(event) {
+    disks.forEach((disk, _) => {
+        disk.remove();
+    })
     moveFromTo = {from: null, to: null};
     const diskNumValue = document.getElementById("numOfDisks").value;
     movesCount = 0;
@@ -39,6 +41,7 @@ function game(event) {
     for (let i = 0; i < diskNumValue; i++) {
         tower1.prepend(disks[i]);
         towerDisks.tower1.push(disks[i]);
+        towerDisks.tower1.at(-1).style.bottom = diskDistance[i] + "px";
     }
     document.getElementById("but1").addEventListener("click", butPressed);
     document.getElementById("but2").addEventListener("click", butPressed);
@@ -47,11 +50,11 @@ function game(event) {
 
 function move(from, to) {
     if (from.length === 0) {
-        alert("Invalid Move: Tower is empty");
+        window.alert("Invalid Move: Tower is empty");
         return;
     } 
-    if ((towerDisks[from.id].at(-1).style.width) > (towerDisks[to.id].at(-1).style.width)) {
-        alert("Invalid Move: Cannot place larger disk on smaller disk");
+    if ((towerDisks[from.id].at(-1).style.width) > (towerDisks[to] && towerDisks[to.id].at(-1).style.width)) {
+        window.alert("Invalid Move: Cannot place larger disk on smaller disk");
         return;
     }
     const diskToMove = towerDisks[from.id].pop();
@@ -64,14 +67,14 @@ function move(from, to) {
 
 function Win() {
     document.getElementById("screen").style.display = "block";
-    document.body.appendChild(winAlert);
+    document.body.appendChild(winwindow.alert);
     document.getElementById("movesDisplayWin").innerHTML = `You completed the game in ${movesCount} moves!`;
-    document.getElementById("closeWinAlert").addEventListener("click", gameEnd);
+    document.getElementById("closeWinwindow.alert").addEventListener("click", gameEnd);
 }
 
 function gameEnd() {
     document.getElementById("screen").style.display = "none";
-    document.getElementById("winAlert").remove();
+    document.getElementById("winwindow.alert").remove();
     moveHeader.style.visibility = "hidden";
     towerDisks.tower1 = [];
     towerDisks.tower2 = [];
