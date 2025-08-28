@@ -7,9 +7,12 @@
     <meta name="description" content="Towers of Hanoi is a fun puzzle/riddle.">
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="icon.png">
     <title>Towers of Hanoi</title>
 </head>
 <body>
+    <div id="screen"></div>
     <header>
         <h1>Towers of Hanoi</h1>
         <nav>
@@ -25,12 +28,13 @@
             <details>
                 <summary class="subDetails">Rules</summary>
                 <h4>These are the rules we will play with:</h4>
-                <ul type="square">.
+                <ul type="square">
+                    <li>To restart, just press start game again</li><br>
                     <li>To move a disk in this website, press on the tower you want to move the disk from, then on the tower you want to move to</li><br>
-                    <li>To win, you must move all the disks from the left peg to the right peg</li><br>
+                    <li>To win, you must move all the disks from tower I to tower III</li><br>
                     <li>Each move consists of taking the topmost disk from a peg and placing it on another</li><br>
                     <li>You cannot place a disk in such a way that there is a smaller disk below a bigger disk</li><br>
-                    <li>Your time and number of moves will be counted, you can view them.</li>
+                    <li>Your number of moves will be counted, you can view it.</li>
                 </ul>
             </details>
             <details>
@@ -43,7 +47,13 @@
             </details>
         </details>
     </section>
+    <form id="startMenu">
+        <h2>Choose Number of Disks</h2>
+        <input type="number" id="numOfDisks" name="numOfDisks" min="3" max="8" value="8">
+        <button id="startButton" type="submit">Start Game</button>
+    </form>
     <section id="gameBoard">
+        <h3 id="moves">Moves: </h3><br>
         <div class="tower" id="tower1">
             <button class="towerButton" id="but1">Tower I</button>
             <div class="towerTop"></div>
@@ -54,8 +64,8 @@
             <div class="towerTop"></div>
             <div class="towerBottom"></div>
         </div>
-        <div class="tower" id="tower1">
-            <button class="towerButton" id="but4">Tower III</button>
+        <div class="tower" id="tower3">
+            <button class="towerButton" id="but3">Tower III</button>
             <div class="towerTop"></div>
             <div class="towerBottom"></div>
         </div>
