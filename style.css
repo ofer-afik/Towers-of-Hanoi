@@ -99,6 +99,7 @@ details {
     height: 25px;
     position: absolute;
     margin: 0px;
+    z-index: 1;
 }
 
 #disk0 {
@@ -152,10 +153,10 @@ details {
 }
 
 #winAlert {
-    z-index: 2;
+    z-index: 3;
     width: 50%;
     height: 50%;
-    display: none;
+    display: block;
     position: fixed;
     top: 25%;
     left: 25%;
@@ -176,4 +177,13 @@ details {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+#closeWinAlert {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background-color: transparent;
+    padding: 0px;
 }

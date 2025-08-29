@@ -1,6 +1,10 @@
+let buttonsEventListeners = false;
+
 const winAlert = document.createElement("div");
-winwindow.alert.id = "winwindow.alert";
-winwindow.alert.innerHTML = "<h2>🎉Congrats! You Win!🎉</h2><h3 id='movesDisplayWin'></h3><button id='closeWinwindow.alert'><img src='close.png' alt='Close'></button>";
+winAlert.id = "winAlert";
+winAlert.innerHTML = `<h2 style='font-size: 50px;'>🎉Congrats! You Win!🎉</h2>
+    <h3 style='font-size: 40px;' id='movesDisplayWin'></h3>
+    <button id='closeWinAlert'><img src='close.png' width='40px' height='40px' alt='Close'></button>`;
 
 const tower1 = document.getElementById("tower1");
 const tower2 = document.getElementById("tower2");
@@ -29,9 +33,10 @@ let moveFromTo
 const moveHeader = document.getElementById("moves");
 
 function game(event) {
-    disks.forEach((disk, _) => {
-        disk.remove();
-    })
+    disks.forEach(disk => disk.remove());
+    towerDisks.tower1 = [];
+    towerDisks.tower2 = [];
+    towerDisks.tower3 = [];
     moveFromTo = {from: null, to: null};
     const diskNumValue = document.getElementById("numOfDisks").value;
     movesCount = 0;
@@ -43,40 +48,50 @@ function game(event) {
         towerDisks.tower1.push(disks[i]);
         towerDisks.tower1.at(-1).style.bottom = diskDistance[i] + "px";
     }
-    document.getElementById("but1").addEventListener("click", butPressed);
-    document.getElementById("but2").addEventListener("click", butPressed);
-    document.getElementById("but3").addEventListener("click", butPressed);
+    if (!buttonsEventListeners) {
+        document.getElementById("but1").addEventListener("click", butPressed);
+        document.getElementById("but2").addEventListener("click", butPressed);
+        document.getElementById("but3").addEventListener("click", butPressed);
+        buttonsEventListeners = true;
+    }
+
 }
 
 function move(from, to) {
-    if (from.length === 0) {
-        window.alert("Invalid Move: Tower is empty");
+    if (towerDisks[from.id].at(-1) === undefined) {
+        alert("Invalid Move: Tower is empty");
         return;
-    } 
-    if ((towerDisks[from.id].at(-1).style.width) > (towerDisks[to] && towerDisks[to.id].at(-1).style.width)) {
-        window.alert("Invalid Move: Cannot place larger disk on smaller disk");
+    } else if (towerDisks[to.id].length === 0 || (parseInt(window.getComputedStyle(towerDisks[from.id].at(-1)).width) < parseInt(window.getComputedStyle(towerDisks[to.id].at(-1)).width))) {
+        const diskToMove = towerDisks[from.id].pop()
+        towerDisks[to.id].push(diskToMove)
+        to.prepend(diskToMove)
+        movesCount++;
+        moveHeader.innerHTML = `Moves: ${movesCount}`;
+        diskToMove.style.bottom = `${diskDistance[towerDisks[to.id].indexOf(diskToMove)]}px`
+        if (towerDisks.tower3.length === parseInt(document.getElementById("numOfDisks").value)) {
+            Win()
+        }
+        return;
+    } else {
+        alert("Invalid Move: Can't place bigger disk on smaller disk")
         return;
     }
-    const diskToMove = towerDisks[from.id].pop();
-    diskToMove.style.bottom = `${diskDistance[towerDisks[to.id].length]}px`;
-    to.prepend(diskToMove);
-    if (towerDisks.tower3.length === parseInt((document.getElementById("numOfDisks").value))) {
-        Win();
-    }
+
 }
 
 function Win() {
-    document.getElementById("screen").style.zIndex = "1";
+    document.getElementById("screen").style.zIndex = "2";
     document.getElementById("screen").style.visibility = "visible";
-    document.body.appendChild(winwindow.alert);
+    document.body.append(winAlert);
     document.getElementById("movesDisplayWin").innerHTML = `You completed the game in ${movesCount} moves!`;
-    document.getElementById("closeWinwindow.alert").addEventListener("click", gameEnd);
+    document.getElementById("closeWinAlert").addEventListener("click", gameEnd);
 }
 
 function gameEnd() {
+    moveFromTo = {from: null, to: null};
     document.getElementById("screen").style.zIndex = "-1";
     document.getElementById("screen").style.visibility = "hidden";
-    document.getElementById("winwindow.alert").remove();
+    document.getElementById("winAlert").remove();
     moveHeader.style.visibility = "hidden";
     towerDisks.tower1 = [];
     towerDisks.tower2 = [];
@@ -84,7 +99,8 @@ function gameEnd() {
     document.getElementById("but1").removeEventListener("click", butPressed);
     document.getElementById("but2").removeEventListener("click", butPressed);
     document.getElementById("but3").removeEventListener("click", butPressed);
-    disks.forEach((disk, _) => {
+    buttonsEventListeners = false;
+    disks.forEach((disk) => {
         disk.remove();
     })
 }
@@ -105,8 +121,6 @@ function butPressed(event) {
             move(moveFromTo.from, moveFromTo.to);
             moveFromTo.from = null;
             moveFromTo.to = null;
-            movesCount++;
-            moveHeader.innerHTML = `Moves: ${movesCount}`;
         }
     }
 }
