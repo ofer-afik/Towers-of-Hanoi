@@ -33,7 +33,10 @@ let moveFromTo
 const moveHeader = document.getElementById("moves");
 
 function game(event) {
-    disks.forEach(disk => disk.remove());
+    disks.forEach(function (disk) {
+        disk.remove();
+        disk.querySelector("button").style.color = "#000000";
+    })
     towerDisks.tower1 = [];
     towerDisks.tower2 = [];
     towerDisks.tower3 = [];
