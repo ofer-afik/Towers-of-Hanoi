@@ -1,5 +1,6 @@
 # Towers-of-Hanoi
-##(Link to site)[https://towers-of-hanoi.tiiny.site/]
+##Link to site
+(Towers of Hanoi)[https://towers-of-hanoi.tiiny.site/]
 
 Towers of Hanoi is a classic puzzle, created by the French mathematician Édouard Lucas.
 
