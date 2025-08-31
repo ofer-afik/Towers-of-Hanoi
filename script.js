@@ -93,6 +93,7 @@ function move(from, to) {
 }
 
 function Win() {
+    clearInterval(timer);
     document.getElementById("screen").style.zIndex = "2";
     document.getElementById("screen").style.visibility = "visible";
     document.body.append(winAlert);
@@ -101,12 +102,11 @@ function Win() {
 }
 
 function gameEnd() {
-    clearInterval(timer);
     moveFromTo = {from: null, to: null};
     document.getElementById("screen").style.zIndex = "-1";
     document.getElementById("screen").style.visibility = "hidden";
     document.getElementById("winAlert").remove();
-    moveHeader.style.visibility = "hidden";
+    countHeader.style.visibility = "hidden";
     towerDisks.tower1 = [];
     towerDisks.tower2 = [];
     towerDisks.tower3 = [];
