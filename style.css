@@ -19,7 +19,7 @@ header {
     color: #515E17;
 }
 
-#moves+time {
+#movesTime {
     visibility: hidden;
     display: inline-block;
     margin: 15px;

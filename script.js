@@ -31,7 +31,7 @@ disks.forEach((disk, index) => {
 let timeStart
 let movesCount
 let moveFromTo
-const countHeader = document.getElementById("moves+time");
+const countHeader = document.getElementById("movesTime");
 
 function game(event) {
     disks.forEach(function (disk) {
