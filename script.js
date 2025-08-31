@@ -28,9 +28,10 @@ disks.forEach((disk, index) => {
     disk.className = "disk";
 })
 
+let timeStart
 let movesCount
 let moveFromTo
-const moveHeader = document.getElementById("moves");
+const countHeader = document.getElementById("+time");
 
 function game(event) {
     disks.forEach(function (disk) {
@@ -45,8 +46,9 @@ function game(event) {
     moveFromTo = {from: null, to: null};
     const diskNumValue = document.getElementById("numOfDisks").value;
     movesCount = 0;
-    moveHeader.style.visibility = "visible";
-    moveHeader.innerHTML = `Moves: ${movesCount}`;
+    timeStart = Date.now();
+    countHeader.style.visibility = "visible";
+    countHeader.innerHTML = `Moves: ${movesCount} Time: ${Math.floor((Date.now() - timeStart)) / 60000}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
     event.preventDefault();
     for (let i = 0; i < diskNumValue; i++) {
         tower1.prepend(disks[i]);
@@ -71,7 +73,7 @@ function move(from, to) {
         towerDisks[to.id].push(diskToMove)
         to.prepend(diskToMove)
         movesCount++;
-        moveHeader.innerHTML = `Moves: ${movesCount}`;
+        countHeader.innerHTML = `Moves: ${movesCount}`;
         diskToMove.style.bottom = `${diskDistance[towerDisks[to.id].indexOf(diskToMove)]}px`
         if (towerDisks.tower3.length === parseInt(document.getElementById("numOfDisks").value)) {
             Win()
