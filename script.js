@@ -32,8 +32,12 @@ let timeStart
 let movesCount
 let moveFromTo
 const countHeader = document.getElementById("movesTime");
+let timer;
 
 function game(event) {
+    if (timer) {
+        clearInterval(timer);
+    }
     disks.forEach(function (disk) {
         disk.remove();
     })
@@ -61,6 +65,9 @@ function game(event) {
         document.getElementById("but3").addEventListener("click", butPressed);
         buttonsEventListeners = true;
     }
+    timer = setInterval(() => {
+        countHeader.innerHTML = `Moves: ${movesCount} Time: ${Math.floor((Date.now() - timeStart)) / 60000}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
+    }, 100);
 
 }
 
@@ -73,7 +80,6 @@ function move(from, to) {
         towerDisks[to.id].push(diskToMove)
         to.prepend(diskToMove)
         movesCount++;
-        countHeader.innerHTML = `Moves: ${movesCount}`;
         diskToMove.style.bottom = `${diskDistance[towerDisks[to.id].indexOf(diskToMove)]}px`
         if (towerDisks.tower3.length === parseInt(document.getElementById("numOfDisks").value)) {
             Win()
@@ -90,11 +96,12 @@ function Win() {
     document.getElementById("screen").style.zIndex = "2";
     document.getElementById("screen").style.visibility = "visible";
     document.body.append(winAlert);
-    document.getElementById("movesDisplayWin").innerHTML = `You completed the game in ${movesCount} moves!`;
+    document.getElementById("movesDisplayWin").innerHTML = `You completed the game in ${movesCount} moves and ${Math.floor((Date.now() - timeStart)) / 60000}m/${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s!`;
     document.getElementById("closeWinAlert").addEventListener("click", gameEnd);
 }
 
 function gameEnd() {
+    clearInterval(timer);
     moveFromTo = {from: null, to: null};
     document.getElementById("screen").style.zIndex = "-1";
     document.getElementById("screen").style.visibility = "hidden";
