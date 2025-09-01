@@ -52,7 +52,7 @@ function game(event) {
     movesCount = 0;
     timeStart = Date.now();
     countHeader.style.visibility = "visible";
-    countHeader.innerHTML = `Moves: ${movesCount} Time: ${Math.floor((Date.now() - timeStart) / 60000)}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
+    countHeader.innerHTML = `Moves: ${movesCount}<br>Time: ${Math.floor((Date.now() - timeStart) / 60000)}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
     event.preventDefault();
     for (let i = 0; i < diskNumValue; i++) {
         tower1.prepend(disks[i]);
@@ -66,7 +66,7 @@ function game(event) {
         buttonsEventListeners = true;
     }
     timer = setInterval(() => {
-        countHeader.innerHTML = `Moves: ${movesCount} Time: ${Math.floor((Date.now() - timeStart) / 60000)}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
+        countHeader.innerHTML = `Moves: ${movesCount}<br>Time: ${Math.floor((Date.now() - timeStart) / 60000)}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
     }, 100);
 
 }
