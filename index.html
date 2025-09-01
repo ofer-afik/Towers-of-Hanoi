@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/png" src="assets/icon.png">
     <title>Towers of Hanoi</title>
 </head>
 <body>
@@ -54,21 +54,23 @@
     </form>
     <section id="gameBoard">
         <h3 id="movesTime"></h3><br>
-        <div class="tower" id="tower1">
+        <img src="assets/undo.svg" alt="Undo Button" id="undoButton" width="24px" height="24px" title="Undo Last Move">
+        <div class="tower" id="tower1" title="Tower I">
             <button class="towerButton" id="but1">Tower I</button>
             <div class="towerTop"></div>
             <div class="towerBottom"></div>
         </div>
-        <div class="tower" id="tower2">
+        <div class="tower" id="tower2" title="Tower II">
             <button class="towerButton" id="but2">Tower II</button>
             <div class="towerTop"></div>
             <div class="towerBottom"></div>
         </div>
-        <div class="tower" id="tower3">
+        <div class="tower" id="tower3" title="Tower III">
             <button class="towerButton" id="but3">Tower III</button>
             <div class="towerTop"></div>
             <div class="towerBottom"></div>
         </div>
     </section>
+    <p style="text-align: center; font-size: 12px; color: #5a5a5a;">Made by Ofer Afik</p>
 </body>
 </html>

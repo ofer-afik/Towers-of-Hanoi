@@ -1,16 +1,13 @@
-body {
-    background-color: #D4FF91;
-}
+body {background-color: #D4FF91;}
 
 * {
+    cursor: auto;
     position: relative;
     z-index: 0;
     font-family: "DynaPuff","Times New Roman", "Sans-Serif";
 }
 
-nav {
-    font-size: 20px;
-}
+nav {font-size: 20px;}
 
 header {
     background-color: #AAC530;
@@ -29,9 +26,7 @@ header {
     font-weight: 600;
 }
 
-#info p {
-    text-indent: 30px;
-}
+#info p {text-indent: 30px;}
 
 #Overview {
     margin-top: 15px;
@@ -71,9 +66,7 @@ details {
     font-size: 20px;
 }
 
-.towerButton:hover {
-    background-image: radial-gradient(#4F8CF7 20%, #D4FF91 80%)
-}
+.towerButton:hover {background-image: radial-gradient(#4F8CF7 20%, #D4FF91 80%);}
 
 .towerTop {
     position: absolute;
@@ -102,45 +95,14 @@ details {
     z-index: 1;
 }
 
-#disk0 {
-    width: 180px;
-    background-color: #D92823;
-}
-
-#disk1 {
-    width: 165px;
-    background-color: #D98D23;
-}
-
-#disk2 {
-    width: 150px;
-    background-color: #F0E116;
-}
-
-#disk3 {
-    width: 135px;
-    background-color: #64DE1F;
-}
-
-#disk4 {
-    width: 120px;
-    background-color: #1FDED1;
-}
-
-#disk5 {
-    width: 105px;
-    background-color: #000ED9;
-}
-
-#disk6 {
-    width: 90px;
-    background-color: #8D00FF;
-}
-
-#disk7 {
-    width: 75px;
-    background-color: #D90BCE;
-}
+#disk0 {width: 180px; background-color: #D92823;}
+#disk1 {width: 165px; background-color: #D98D23;}
+#disk2 {width: 150px; background-color: #F0E116;}
+#disk3 {width: 135px; background-color: #64DE1F;}
+#disk4 {width: 120px; background-color: #1FDED1;}
+#disk5 {width: 105px; background-color: #000ED9;}
+#disk6 {width: 90px; background-color: #8D00FF;}
+#disk7 {width: 75px; background-color: #D90BCE;}
 
 #startMenu {
     text-align: center;
@@ -188,3 +150,13 @@ details {
     background-color: transparent;
     padding: 0px;
 }
+
+#undoButton {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 75vw
+}
+
+#undoButton svg {fill: #dd9700;}
+#undoButton:hover svg {fill: #1f1f1f;}

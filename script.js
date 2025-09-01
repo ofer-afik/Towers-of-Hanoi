@@ -4,7 +4,7 @@ const winAlert = document.createElement("div");
 winAlert.id = "winAlert";
 winAlert.innerHTML = `<h2 style='font-size: 50px;'>🎉Congrats! You Win!🎉</h2>
     <h3 style='font-size: 40px;' id='movesDisplayWin'></h3>
-    <button id='closeWinAlert'><img src='close.png' width='40px' height='40px' alt='Close'></button>`;
+    <button id='closeWinAlert'><img src='assets/close.png' width='40px' height='40px' alt='Close'></button>`;
 
 const tower1 = document.getElementById("tower1");
 const tower2 = document.getElementById("tower2");
@@ -33,8 +33,11 @@ let movesCount
 let moveFromTo
 const countHeader = document.getElementById("movesTime");
 let timer;
+let history = [];
+const undoButton = document.getElementById("undoButton");
 
 function game(event) {
+    document.querySelector("#undoButton svg").style.fill = "#b1b1b1";
     if (timer) {
         clearInterval(timer);
     }
@@ -102,6 +105,7 @@ function Win() {
 }
 
 function gameEnd() {
+    document.querySelector("#undoButton svg").style.fill = "#b1b1b1";
     moveFromTo = {from: null, to: null};
     document.getElementById("screen").style.zIndex = "-1";
     document.getElementById("screen").style.visibility = "hidden";
