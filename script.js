@@ -37,7 +37,6 @@ let history = [];
 const undoButton = document.getElementById("undoButton");
 
 function game(event) {
-    document.querySelector("#undoButton svg").style.fill = "#b1b1b1";
     if (timer) {
         clearInterval(timer);
     }
@@ -105,7 +104,6 @@ function Win() {
 }
 
 function gameEnd() {
-    document.querySelector("#undoButton svg").style.fill = "#b1b1b1";
     moveFromTo = {from: null, to: null};
     document.getElementById("screen").style.zIndex = "-1";
     document.getElementById("screen").style.visibility = "hidden";

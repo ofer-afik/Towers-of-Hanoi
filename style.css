@@ -153,10 +153,25 @@ details {
 
 #undoButton {
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 15px;
-    left: 75vw
+    left: 75vw;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+
 }
 
-#undoButton svg {fill: #dd9700;}
-#undoButton:hover svg {fill: #1f1f1f;}
+#undoButtonPic {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#undoButtonPic:hover {width: 28px; height: 28px;}
