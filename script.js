@@ -33,8 +33,9 @@ let movesCount
 let moveFromTo
 const countHeader = document.getElementById("movesTime");
 let timer;
-let history = [];
+let history
 const undoButton = document.getElementById("undoButton");
+const undoButtonPic = document.getElementById("undoButtonPic");
 
 function game(event) {
     if (timer) {
@@ -69,8 +70,8 @@ function game(event) {
     }
     timer = setInterval(() => {
         countHeader.innerHTML = `Moves: ${movesCount}<br>Time: ${Math.floor((Date.now() - timeStart) / 60000)}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
-    }, 100);
-
+    }, 11);
+    history = [];
 }
 
 function move(from, to) {
@@ -83,6 +84,10 @@ function move(from, to) {
         to.prepend(diskToMove)
         movesCount++;
         diskToMove.style.bottom = `${diskDistance[towerDisks[to.id].indexOf(diskToMove)]}px`
+        history.push({from: from, to: to});
+        if (history.length !== 0) {
+            undoButtonPic.src = "assets/undo-active.svg";
+        }
         if (towerDisks.tower3.length === parseInt(document.getElementById("numOfDisks").value)) {
             Win()
         }
@@ -140,5 +145,26 @@ function butPressed(event) {
         }
     }
 }
+
+undoButton.addEventListener("click", function (event) {
+    if (undoButtonPic.src == "assets/undo.svg") {
+        return;
+    } else if (history.length === 0) {
+        alert("No moves to undo");
+        return;
+    } else {
+        const lastMove = history.pop();
+        from = lastMove.to
+        to = lastMove.from
+        const diskToMove = towerDisks[from.id].pop()
+        towerDisks[to.id].push(diskToMove)
+        to.prepend(diskToMove)
+        diskToMove.style.bottom = `${diskDistance[towerDisks[to.id].indexOf(diskToMove)]}px`
+        movesCount--;
+    }
+    if (history.length === 0) {
+        undoButtonPic.src = "assets/undo.svg"
+    }
+})
 
 document.getElementById("startMenu").addEventListener("submit", game);
