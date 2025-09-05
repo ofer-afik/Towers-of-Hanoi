@@ -109,6 +109,7 @@ function Win() {
 }
 
 function gameEnd() {
+    undoButtonPic.src = "assets/undo.svg";
     moveFromTo = {from: null, to: null};
     document.getElementById("screen").style.zIndex = "-1";
     document.getElementById("screen").style.visibility = "hidden";
