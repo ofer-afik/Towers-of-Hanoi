@@ -70,7 +70,7 @@ function game(event) {
     }
     timer = setInterval(() => {
         countHeader.innerHTML = `Moves: ${movesCount}<br>Time: ${Math.floor((Date.now() - timeStart) / 60000)}m ${(((Date.now() - timeStart) % 60000) /1000).toFixed(3)}s`;
-    }, 11);
+    }, 51);
     history = [];
 }
 
