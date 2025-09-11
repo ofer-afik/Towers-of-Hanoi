@@ -203,12 +203,13 @@ details {
 
     #gameBoard {
         margin: 0px;
-        padding: 5px;
         transform: scale(0.45);
         transform-origin: top center;
         -webkit-transform: scale(0.45);
         margin-bottom: 20px;
     }
+
+    .tower {margin: 10px;}
 
     #movesTime { font-size: 20px; }
     #undoButton { left: 68vw; top: 10px; }
