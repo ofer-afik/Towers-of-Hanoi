@@ -2,8 +2,8 @@ let buttonsEventListeners = false;
 
 const winAlert = document.createElement("div");
 winAlert.id = "winAlert";
-winAlert.innerHTML = `<h2 style='font-size: 50px;'>🎉Congrats! You Win!🎉</h2>
-    <h3 style='font-size: 40px;' id='movesDisplayWin'></h3>
+winAlert.innerHTML = `<h2 id='congrats'>🎉Congrats! You Win!🎉</h2>
+    <h3 id='movesDisplayWin'></h3>
     <button id='closeWinAlert'><img src='assets/close.png' width='40px' height='40px' alt='Close'></button>`;
 
 const tower1 = document.getElementById("tower1");
