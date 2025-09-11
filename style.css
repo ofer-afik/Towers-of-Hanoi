@@ -200,4 +200,8 @@ details {
         height: 60%;
         width: 60%;
     }
+
+    .tower, .towerButton, .towerTop, .towerBottom, .disk {
+        transform: scale(0.5);
+    }
 }
