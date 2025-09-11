@@ -191,7 +191,7 @@ details {
 }
 @media (orientation: portrait) {#rotate{display: flex;}}
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     
     #congrats {font-size: 40px;}
     #movesDisplayWin {font-size: 30px;}
@@ -201,7 +201,12 @@ details {
         width: 60%;
     }
 
-    .tower, .towerButton, .towerTop, .towerBottom, .disk {
-        transform: scale(0.5);
+    #gameBoard {
+        transform: scale(0.80);
+        transform-origin: top center;
+        -webkit-transform: scale(0.80);
     }
+    
+    #movesTime { font-size: 20px; }
+    #undoButton { left: 68vw; top: 10px; }
 }
