@@ -203,6 +203,7 @@ details {
 
     #gameBoard {
         margin: 0px;
+        padding: 5px;
         transform: scale(0.45);
         transform-origin: top center;
         -webkit-transform: scale(0.45);
