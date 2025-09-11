@@ -202,9 +202,9 @@ details {
     }
 
     #gameBoard {
-        transform: scale(0.78);
+        transform: scale(0.65);
         transform-origin: top center;
-        -webkit-transform: scale(0.78);
+        -webkit-transform: scale(0.65);
     }
 
     #movesTime { font-size: 20px; }
