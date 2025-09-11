@@ -202,6 +202,7 @@ details {
     }
 
     #gameBoard {
+        width: 100%;
         margin: 0px;
         transform: scale(0.45);
         transform-origin: top center;
@@ -209,7 +210,7 @@ details {
         margin-bottom: 20px;
     }
 
-    .tower {margin: 10px; display: inline;}
+    .tower {margin: 10px;}
 
     #movesTime { font-size: 20px; }
     #undoButton { left: 68vw; top: 10px; }
