@@ -202,7 +202,7 @@ details {
     }
 
     #gameBoard {
-        margin: 10px;
+        margin: 0px;
         transform: scale(0.5);
         transform-origin: top center;
         -webkit-transform: scale(0.5);
