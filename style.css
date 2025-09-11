@@ -202,11 +202,11 @@ details {
     }
 
     #gameBoard {
-        transform: scale(0.80);
+        transform: scale(0.78);
         transform-origin: top center;
-        -webkit-transform: scale(0.80);
+        -webkit-transform: scale(0.78);
     }
-    
+
     #movesTime { font-size: 20px; }
     #undoButton { left: 68vw; top: 10px; }
 }
