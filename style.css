@@ -53,7 +53,10 @@ details {
     display: inline-block;
     background-color: hsl(218, 91%, 64%);
     height: 400px;    
-    width: 300px;
+    /* responsive width so three towers can fit on narrow viewports */
+    width: 30vw;
+    max-width: 300px;
+    min-width: 90px;
     margin: 15px;
 }
 
@@ -61,7 +64,8 @@ details {
     position: absolute;
     background-image: radial-gradient(#D4FF91 20%, #4F8CF7 80%);
     border: none;
-    width: 300px;
+    /* make button width follow tower width */
+    width: 100%;
     height: 50px;
     font-size: 20px;
 }
@@ -71,18 +75,22 @@ details {
 .towerTop {
     position: absolute;
     top: 80px;
-    right: 135px;
-    width: 30px;
-    height: 240px;
+    /* center the rod horizontally within the tower and use percentage width */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6%;
+    height: 60%;
     background-color: #F7B94F;
 }
 
 .towerBottom {
     position: absolute;
     top: 320px;
-    right: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 30px;
-    width: 200px;
+    /* base width relative to tower */
+    width: 66%;
     background-color: #F7B94F;
 }
 
@@ -95,14 +103,15 @@ details {
     z-index: 1;
 }
 
-#disk0 {width: 180px; background-color: #D92823;}
-#disk1 {width: 165px; background-color: #D98D23;}
-#disk2 {width: 150px; background-color: #F0E116;}
-#disk3 {width: 135px; background-color: #64DE1F;}
-#disk4 {width: 120px; background-color: #1FDED1;}
-#disk5 {width: 105px; background-color: #000ED9;}
-#disk6 {width: 90px; background-color: #8D00FF;}
-#disk7 {width: 75px; background-color: #D90BCE;}
+/* disk widths in percentages so they scale with tower width */
+#disk0 {width: 66%; background-color: #D92823;}
+#disk1 {width: 60%; background-color: #D98D23;}
+#disk2 {width: 54%; background-color: #F0E116;}
+#disk3 {width: 48%; background-color: #64DE1F;}
+#disk4 {width: 42%; background-color: #1FDED1;}
+#disk5 {width: 36%; background-color: #000ED9;}
+#disk6 {width: 30%; background-color: #8D00FF;}
+#disk7 {width: 24%; background-color: #D90BCE;}
 
 #startMenu {
     text-align: center;
