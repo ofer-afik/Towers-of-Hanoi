@@ -50,6 +50,7 @@ details {
 }
 
 .tower {
+    relative
     display: inline-block;
     background-color: hsl(218, 91%, 64%);
     height: 400px;    
@@ -111,6 +112,9 @@ details {
 }
 
 #gameBoard {
+    position: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -205,9 +209,9 @@ details {
     #gameBoard {
         width: 100%;
         margin: 0px;
-        transform: scale(0.33);
+        transform: scale(0.5);
         transform-origin: top center;
-        -webkit-transform: scale(0.33);
+        -webkit-transform: scale(0.5);
         margin-bottom: 20px;
     }
 
