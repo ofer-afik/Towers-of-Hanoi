@@ -205,9 +205,9 @@ details {
     #gameBoard {
         width: 100%;
         margin: 0px;
-        transform: scale(0.45);
+        transform: scale(0.33);
         transform-origin: top center;
-        -webkit-transform: scale(0.45);
+        -webkit-transform: scale(0.33);
         margin-bottom: 20px;
     }
 
