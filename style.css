@@ -50,7 +50,7 @@ details {
 }
 
 .tower {
-    relative
+    position: relative;
     display: inline-block;
     background-color: hsl(218, 91%, 64%);
     height: 400px;    
